@@ -1,6 +1,6 @@
 // @SOURCE:C:/Code/play-akka-chat/conf/routes
-// @HASH:06ae8be0b17feba002056879455c629758fea881
-// @DATE:Tue Aug 26 10:46:21 BST 2014
+// @HASH:b4277da08ebf7824c2075ae4269e751dc3a1be62
+// @DATE:Tue Aug 26 16:24:47 BST 2014
 
 package controllers;
 

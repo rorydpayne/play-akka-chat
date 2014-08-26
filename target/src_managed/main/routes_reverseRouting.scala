@@ -1,6 +1,6 @@
 // @SOURCE:C:/Code/play-akka-chat/conf/routes
-// @HASH:06ae8be0b17feba002056879455c629758fea881
-// @DATE:Tue Aug 26 10:46:21 BST 2014
+// @HASH:b4277da08ebf7824c2075ae4269e751dc3a1be62
+// @DATE:Tue Aug 26 16:24:47 BST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -38,7 +38,7 @@ class ReverseApplication {
 
 // @LINE:6
 def index(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "hello")
+   Call("GET", _prefix)
 }
                                                 
 
@@ -87,7 +87,7 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.index",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "hello"})
+      return _wA({method:"GET", url:"""" + _prefix + """"})
       }
    """
 )
@@ -136,7 +136,7 @@ class ReverseApplication {
 
 // @LINE:6
 def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """hello""")
+   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
 )
                       
 

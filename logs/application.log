@@ -423,3 +423,479 @@ Caused by: akka.pattern.AskTimeoutException: Timed out
 	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
 	... 4 common frames omitted
 
+2014-08-26 16:05:25,426 - [INFO] - from play in main 
+Application started (Prod)
+
+2014-08-26 16:05:25,533 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2014-08-26 16:05:35,117 - [INFO] - from play in play-akka.actor.default-dispatcher-7 
+Starting application default Akka system.
+
+2014-08-26 16:05:35,134 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: java.lang.IllegalStateException: cannot create children while terminating or terminated
+
+2014-08-26 16:05:35,140 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8c882d - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[IllegalStateException: cannot create children while terminating or terminated]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: java.lang.IllegalStateException: cannot create children while terminating or terminated
+	at akka.actor.dungeon.Children$class.makeChild(Children.scala:184) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.dungeon.Children$class.attachChild(Children.scala:40) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorCell.attachChild(ActorCell.scala:338) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.actorOf(ActorSystem.scala:520) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at controllers.Application.login(Application.java:24) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(routes_routing.scala:61) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(routes_routing.scala:61) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.3.jar:2.2.3]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-08-26 16:05:35,144 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: akka.pattern.AskTimeoutException: Timed out
+
+2014-08-26 16:05:35,146 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8c882m - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[AskTimeoutException: Timed out]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: akka.pattern.AskTimeoutException: Timed out
+	at akka.pattern.PromiseActorRef$$anonfun$1.apply$mcV$sp(AskSupport.scala:334) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.Scheduler$$anon$11.run(Scheduler.scala:118) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$TaskHolder.run(Scheduler.scala:464) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:281) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:280) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.collection.Iterator$class.foreach(Iterator.scala:727) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1157) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[scala-library-2.10.2.jar:na]
+	at akka.actor.LightArrayRevolverScheduler.close(Scheduler.scala:279) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.stopScheduler(ActorSystem.scala:630) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply$mcV$sp(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anon$3.run(ActorSystem.scala:596) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.runNext$1(ActorSystem.scala:750) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply$mcV$sp(ActorSystem.scala:753) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.util.ReentrantGuard.withGuard(LockUtil.scala:15) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks.run(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) ~[scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-08-26 16:12:18,043 - [INFO] - from play in main 
+Application started (Prod)
+
+2014-08-26 16:12:18,156 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2014-08-26 16:12:21,201 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
+Starting application default Akka system.
+
+2014-08-26 16:12:21,229 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: akka.pattern.AskTimeoutException: Timed out
+
+2014-08-26 16:12:21,237 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8d5ale - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[AskTimeoutException: Timed out]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: akka.pattern.AskTimeoutException: Timed out
+	at akka.pattern.PromiseActorRef$$anonfun$1.apply$mcV$sp(AskSupport.scala:334) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.Scheduler$$anon$11.run(Scheduler.scala:118) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$TaskHolder.run(Scheduler.scala:464) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:281) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:280) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.collection.Iterator$class.foreach(Iterator.scala:727) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1157) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[scala-library-2.10.2.jar:na]
+	at akka.actor.LightArrayRevolverScheduler.close(Scheduler.scala:279) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.stopScheduler(ActorSystem.scala:630) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply$mcV$sp(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anon$3.run(ActorSystem.scala:596) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.runNext$1(ActorSystem.scala:750) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply$mcV$sp(ActorSystem.scala:753) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.util.ReentrantGuard.withGuard(LockUtil.scala:15) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks.run(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) ~[scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-08-26 16:16:14,352 - [INFO] - from play in main 
+Application started (Prod)
+
+2014-08-26 16:16:14,465 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2014-08-26 16:16:23,260 - [INFO] - from play in play-akka.actor.default-dispatcher-4 
+Starting application default Akka system.
+
+2014-08-26 16:16:23,289 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: akka.pattern.AskTimeoutException: Timed out
+
+2014-08-26 16:16:23,297 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8dj4ne - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[AskTimeoutException: Timed out]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: akka.pattern.AskTimeoutException: Timed out
+	at akka.pattern.PromiseActorRef$$anonfun$1.apply$mcV$sp(AskSupport.scala:334) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.Scheduler$$anon$11.run(Scheduler.scala:118) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$TaskHolder.run(Scheduler.scala:464) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:281) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:280) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.collection.Iterator$class.foreach(Iterator.scala:727) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1157) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[scala-library-2.10.2.jar:na]
+	at akka.actor.LightArrayRevolverScheduler.close(Scheduler.scala:279) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.stopScheduler(ActorSystem.scala:630) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply$mcV$sp(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anon$3.run(ActorSystem.scala:596) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.runNext$1(ActorSystem.scala:750) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply$mcV$sp(ActorSystem.scala:753) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.util.ReentrantGuard.withGuard(LockUtil.scala:15) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks.run(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) ~[scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-08-26 16:16:26,262 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: java.lang.IllegalStateException: cannot create children while terminating or terminated
+
+2014-08-26 16:16:26,263 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8dj97l - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[IllegalStateException: cannot create children while terminating or terminated]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: java.lang.IllegalStateException: cannot create children while terminating or terminated
+	at akka.actor.dungeon.Children$class.makeChild(Children.scala:184) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.dungeon.Children$class.attachChild(Children.scala:40) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorCell.attachChild(ActorCell.scala:338) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.actorOf(ActorSystem.scala:520) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at controllers.Application.login(Application.java:26) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(routes_routing.scala:61) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(routes_routing.scala:61) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$8$$anon$3.invocation(Router.scala:198) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.3.jar:2.2.3]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-08-26 16:16:27,089 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: java.lang.IllegalStateException: cannot create children while terminating or terminated
+
+2014-08-26 16:16:27,090 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8djadh - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[IllegalStateException: cannot create children while terminating or terminated]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: java.lang.IllegalStateException: cannot create children while terminating or terminated
+	at akka.actor.dungeon.Children$class.makeChild(Children.scala:184) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.dungeon.Children$class.attachChild(Children.scala:40) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorCell.attachChild(ActorCell.scala:338) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.actorOf(ActorSystem.scala:520) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at controllers.Application.login(Application.java:26) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(routes_routing.scala:61) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(routes_routing.scala:61) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$8$$anon$3.invocation(Router.scala:198) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.3.jar:2.2.3]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2014-08-26 16:25:08,822 - [INFO] - from play in main 
+Application started (Prod)
+
+2014-08-26 16:25:08,937 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2014-08-26 16:25:13,071 - [INFO] - from play in play-akka.actor.default-dispatcher-6 
+Starting application default Akka system.
+
+2014-08-26 16:25:20,497 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: akka.pattern.AskTimeoutException: Timed out
+
+2014-08-26 16:25:20,504 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6jb8enjf9 - Internal server error, for (GET) [/login] ->
+
+play.api.Application$$anon$1: Execution exception[[AskTimeoutException: Timed out]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.3.jar:2.2.3]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) [scala-library-2.10.2.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:264) [play_2.10-2.2.3.jar:2.2.3]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:260) [play_2.10-2.2.3.jar:2.2.3]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10-2.2.3.jar:2.2.3]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.2.jar:na]
+Caused by: akka.pattern.AskTimeoutException: Timed out
+	at akka.pattern.PromiseActorRef$$anonfun$1.apply$mcV$sp(AskSupport.scala:334) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.Scheduler$$anon$11.run(Scheduler.scala:118) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$TaskHolder.run(Scheduler.scala:464) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:281) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.LightArrayRevolverScheduler$$anonfun$close$1.apply(Scheduler.scala:280) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.collection.Iterator$class.foreach(Iterator.scala:727) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1157) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.IterableLike$class.foreach(IterableLike.scala:72) ~[scala-library-2.10.2.jar:na]
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:54) ~[scala-library-2.10.2.jar:na]
+	at akka.actor.LightArrayRevolverScheduler.close(Scheduler.scala:279) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl.stopScheduler(ActorSystem.scala:630) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply$mcV$sp(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$_start$1.apply(ActorSystem.scala:582) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anon$3.run(ActorSystem.scala:596) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.runNext$1(ActorSystem.scala:750) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply$mcV$sp(ActorSystem.scala:753) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks$$anonfun$run$1.apply(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.util.ReentrantGuard.withGuard(LockUtil.scala:15) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$TerminationCallbacks.run(ActorSystem.scala:746) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.actor.ActorSystemImpl$$anonfun$terminationCallbacks$1.apply(ActorSystem.scala:593) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.processBatch$1(BatchingExecutor.scala:67) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:82) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.BatchingExecutor$Batch$$anonfun$run$1.apply(BatchingExecutor.scala:59) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72) ~[scala-library-2.10.2.jar:na]
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:58) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
