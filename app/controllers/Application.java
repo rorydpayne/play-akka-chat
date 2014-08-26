@@ -1,7 +1,7 @@
 package controllers;
 
 import actors.ChatServer;
-import actors.messages.Login;
+import actors.messages.ChatMessages.Login;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
@@ -35,4 +35,16 @@ public class Application extends Controller {
                         }
                 );
     }
+
+//    public static F.Promise<Result> logout() {
+//        return TODO;
+//    }
+//
+//    public static F.Promise<Result> postMessage() {
+//
+//    }
+//
+//    public static F.Promise<Result> chatLog() {
+//
+//    }
 }

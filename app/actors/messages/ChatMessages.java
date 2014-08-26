@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ChatMessages {
 
-    public class Login {
+    public static class Login {
         final String user;
 
         public Login(String user) {
@@ -16,7 +16,7 @@ public class ChatMessages {
         }
     }
 
-    public class Logout {
+    public static class Logout {
         final String user;
 
         public Logout(String user) {
@@ -28,7 +28,7 @@ public class ChatMessages {
         }
     }
 
-    public class GetChatLog {
+    public static class GetChatLog {
         final String from;
 
         public GetChatLog(String from) {
@@ -40,7 +40,7 @@ public class ChatMessages {
         }
     }
 
-    public class ChatLog {
+    public static class ChatLog {
         final List<String> log;
 
         public ChatLog(List<String> log) {
@@ -52,7 +52,7 @@ public class ChatMessages {
         }
     }
 
-    public class ChatMessage {
+    public static class ChatMessage {
         final String from, message;
 
         public ChatMessage(String from, String message) {
