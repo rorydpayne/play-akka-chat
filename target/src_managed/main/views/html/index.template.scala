@@ -59,7 +59,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Aug 26 16:24:49 BST 2014
+                    DATE: Wed Aug 27 10:40:47 BST 2014
                     SOURCE: C:/Code/play-akka-chat/app/views/index.scala.html
                     HASH: 13278a3e4271d16505bd38681d1cb5e5ae1d9e95
                     MATRIX: 637->0|1034->362|1048->368|1126->425|1483->746|1498->752|1552->784|1641->837|1656->843|1720->885|1809->938|1824->944|1891->989

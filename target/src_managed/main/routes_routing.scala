@@ -1,6 +1,6 @@
 // @SOURCE:C:/Code/play-akka-chat/conf/routes
-// @HASH:b4277da08ebf7824c2075ae4269e751dc3a1be62
-// @DATE:Tue Aug 26 16:24:47 BST 2014
+// @HASH:61fea0d9f57b1c43d8932ce113b2f24e6ac020b8
+// @DATE:Wed Aug 27 10:40:46 BST 2014
 
 
 import play.core._
@@ -36,7 +36,7 @@ private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern
 private[this] lazy val controllers_Application_login1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("login"))))
         
 
-// @LINE:11
+// @LINE:14
 private[this] lazy val controllers_Assets_at2 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
         
 def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -63,7 +63,7 @@ case controllers_Application_login1(params) => {
 }
         
 
-// @LINE:11
+// @LINE:14
 case controllers_Assets_at2(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))

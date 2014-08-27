@@ -15,14 +15,14 @@ public class Session extends UntypedActor {
 
     public Session(String user, ActorRef storage) {
         this.storage = storage;
-        log().logger().info("New session for user [%s] has been created at [%s]", user, loginTime);
+      //  log().logger().info("New session for user [%s] has been created at [%s]", user, loginTime);
     }
 
     @Override
     public void onReceive(Object message) throws Exception {
         if (message instanceof ChatMessage) {
                 userLog.add(((ChatMessage) message).getMessage());
-                storage.sendOneWay(message);
+             //   storage.sendOneWay(message);
         } else if (message instanceof GetChatLog) {
                 storage.forward(message, getContext());
         }
