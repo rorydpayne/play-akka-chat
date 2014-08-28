@@ -3,8 +3,10 @@ package actors.managers;
 import actors.Session;
 import actors.messages.ChatMessages.Login;
 import actors.messages.ChatMessages.Logout;
-
+import actors.messages.ChatMessages.GetChatLog;
+import actors.messages.ChatMessages.ChatMessage;
 import akka.actor.*;
+import play.libs.Akka;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,24 +29,19 @@ public class SessionManagement {
     public void handleReceive(final Object message) {
         if (message instanceof Login) {
             final String username =((Login) message).getUser();
-//            ActorRef session = system.actorOf(new Props(new UntypedActorFactory() {
-//
-//                @Override
-//                public UntypedActor create() throws Exception {
-//                    return new Session(username, storage);
-//                }
-//            }), "session");
-//
-//            session.
-            ActorRef session = system.actorOf(Props.create(Session.class, username, storage), "session");
-            session.start(); // starts a session actor
-            session.put(((Login) message).getUser(), session);    // sends login message to session actor
-            logger().info("User [%s] has logged in", username);
+            ActorRef session = system.actorOf(new Props(new UntypedActorFactory() {
 
-            } else if (message instanceof Logout) {
+                @Override
+                public Actor create() throws Exception {
+                    return new Session(username, storage);
+                }
+            }), "session");
+            session.start();
+            session.put(((Login) message).getUser(), session);
+            logger().info("User [%s] has logged in", username);
+        } else if (message instanceof Logout) {
             String username = ((Logout) message).getUser();
-            ActorRef session = sessions.get(username);            // get session actor of the username
-            session.stop();
+            ActorRef session = sessions.get(username);
             logger().info("User [%s] has logged out", username);
         }
     }
